@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calcularTriangulo() {
+            let baseTriangulo = parseFloat(prompt("Digite a base do triangulo:"));
+            let alturaTriangulo = parseFloat(prompt("Digite a altura do triangulo:"));
+            let areaTriangulo = (baseTriangulo * alturaTriangulo) / 2;
+            window.alert(`A área do triangulo é: ${areaTriangulo}`);
+        }
+        function calcularTrapezio() {
+            let baseMaior = parseFloat(document.getElementById("baseMaior").value);
+            let baseMenor = parseFloat(document.getElementById("baseMenor").value);
+            let alturaTrapezio = parseFloat(document.getElementById("altura").value);
+            let areaTrapezio = ((baseMaior + baseMenor) / 2) * alturaTrapezio;
+            window.alert(`A área do trapezio é: ${areaTrapezio}`);
+        }
+
+        function calcularCirculo() {
+            let raioCirculo = parseFloat(prompt("Digite o raio do circulo:"));
+            let areaCirculo = Math.PI * raioCirculo ** 2;
+            window.alert(`A área do circulo é: ${areaCirculo}`);
+        }
+        function calcularQuadrado() {
+            let ladoQuadrado = parseFloat(prompt("Digite o lado do quadrado:"));
+            let areaQuadrado = ladoQuadrado ** 2;
+            window.alert(`A área do quadrado é: ${areaQuadrado}`);
+        }
+
+        var figura = prompt("Digite o tipo de figura geométrica (triangulo, trapezio, circulo, etc.):")toLowerCase();
+
+        switch (figura) {
+            case "triangulo":
+                calcularTriangulo();
+                break;
+            case "trapezio":
+                calcularTrapezio();
+                break;
+            case "circulo":
+                calcularCirculo();
+                break;
+            case "quadrado":
+                calcularQuadrado();
+                break;
+            default:
+                window.alert("Figura geométrica inválida");
+        }
+    </script>
+</body>
+
+</html>
