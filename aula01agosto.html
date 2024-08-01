@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <form>
+        <h3>Login</h3>
+        <input type="text" placeholder="Login" id="login" required>
+        <h3>Senha</h3>
+        <input type="password" placeholder="Senha" id="senha" required>
+        <h3></h3>
+    </form>
+    <button onclick="verificarLogin(event)">Entrar</button>
+    <button onclick="calcularMedia()" disabled>Calcular média</button>
+    <button onclick="parImpar()" disabled>Par ou ímpar</button>
+    <button onclick="calcularIdade()" disabled>Calcular idade</button>
+
+    <script>
+        function verificarLogin(event) {
+            event.preventDefault();
+            var login = document.getElementById('login').value;
+            var senha = document.getElementById('senha').value;
+            if (login === 'admin' && senha === 'admin') {
+                alert('Login bem-sucedido!');
+                document.querySelector('form').reset();
+                document.querySelector('input[type="submit"]').disabled = false;
+                document.querySelectorAll('button:not([type="submit"])').forEach(function (button) {
+                    button.disabled = false;
+                });
+            } else {
+                alert('Login ou senha inválidos!');
+                document.querySelector('form').reset();
+            }
+        }
+
+        function calcularMedia() {
+            var nota1 = parseFloat(prompt("Digite a primeira nota:"));
+            var nota2 = parseFloat(prompt("Digite a segunda nota:"));
+            var nota3 = parseFloat(prompt("Digite a terceira nota:"));
+            if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
+                alert("Por favor, insira números válidos!");
+            } else {
+                var media = (nota1 + nota2 + nota3) / 3;
+                alert("A média é: " + media.toFixed(2));
+            }
+        }
+
+        function parImpar() {
+            var numero = parseInt(prompt("Digite um número:"));
+            if (isNaN(numero)) {
+                alert("Por favor, insira um número válido!");
+            } else {
+                if (numero % 2 === 0) {
+                    alert("O número " + numero + " é par.");
+                } else {
+                    alert("O número " + numero + " é ímpar.");
+                }
+            }
+        }
+
+        function calcularIdade() {
+            var dataNascimento = prompt("Digite a data de nascimento no formato (DD/MM/AAAA):");
+            var dataNascimentoRegex = /^(0[1-9]|[12][0-9]|3[01])[\/\-](0[1-9]|1[012])[\/\-]\d{4}$/;
+            if (!dataNascimentoRegex.test(dataNascimento)) {
+                alert("Por favor, insira uma data válida!");
+            } else {
+                var hoje = new Date();
+                var dataNascimentoArray = dataNascimento.split(/[-\/]/);
+                var dataNascimento = new Date(dataNascimentoArray[2], dataNascimentoArray[1] - 1, dataNascimentoArray[0]);
+                var diferencaEmMilissegundos = hoje.getTime() - dataNascimento.getTime();
+                var idade = diferencaEmMilissegundos / (1000 * 60 * 60 * 24 * 365.25);
+                alert("Sua idade é: " + idade.toFixed(0) + " anos.");
+            }
+        }
+    </script>
+</body>
+
+</html>
