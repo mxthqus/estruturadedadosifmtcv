@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Matrizes Javascript</h1>
+
+    <h2> O método Concat()</h2>
+
+    <!-- O método Concat() concatena dois ou mais arrays -->
+    <p>O método Concat() concatena dois ou mais arrays.</p>
+
+    <!-- Exibe o resultado da concatenação dos arrays -->
+    <p id="demonstração"></p>
+
+    <script>
+        // Declara dois arrays
+        const arr1 = ["Cecilie", "Solitária"];
+        const arr2 = ["Emil", "Tobias", "Linus"];
+
+        // Concatena os arrays com o método Concat()
+        const filhos = arr1.concat(arr2);
+
+        // Exibe o resultado na página
+        document.getElementById("demonstração").innerHTML = filhos;
+    </script>
+</body>
+
+</html>

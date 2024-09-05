@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Matrizes Javascript</h1>
+
+    <h2>O método every()</h2>
+
+    <p>
+        O método every() percorre todos os elementos de um array e retorna um valor booleano.
+    </p>
+
+    <p id="demonstração"></p>
+</body>
+<script>
+    // criar uma matriz
+    const idades = [32, 33, 16, 40, 50];
+
+    // função a ser executada para cada elemento da matriz
+    function verificarIdade(idade) {
+        return idade >= 18;
+    }
+
+    // Mostra a mensagem com o resultado
+    document.getElementById("demonstração").innerHTML = "Todos os elementos têm mais de 18 anos? "
+        + idades.every(verificarIdade);
+</script>
+
+</html>

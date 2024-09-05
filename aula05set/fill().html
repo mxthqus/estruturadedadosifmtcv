@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Matrizes Javascript</h1>
+
+    <h2>Método fill()</h2>
+
+    <p>
+        O método fill() preenche todos os elementos de um array com um valor.
+    </p>
+
+    <p id="demonstração"></p>
+</body>
+<script>
+    // cria uma matriz com 4 elementos
+    const frutas = ["banana", "laranja", "maçã", "manga"];
+
+    // preenche a matriz com o valor "kiwi" começando do índice 2 e indo até o final
+    document.getElementById("demonstração").innerHTML = frutas.fill("kiwi", 2, 4);
+</script>
+
+</html>

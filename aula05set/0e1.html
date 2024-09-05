@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrizes Javascript</title>
+</head>
+
+<body>
+    <h1>Matrizes Javascript</h1>
+    <h2>O método at()</h2>
+
+    <p>
+        O método at() retorna um elemento indexado de uma matriz.
+    </p>
+
+    <p id="demonstração"> </p>
+
+    <p id="demonstração2"> </p>
+    <script>
+        // Declara uma matriz de frutas
+        const frutas = ["banana", "laranja", "maçã", "manga"];
+
+        // Pega o primeiro elemento da matriz
+        let fruta = frutas.at(0);
+        document.getElementById("demonstração").innerHTML = fruta;
+
+        // Pega o último elemento da matriz
+        let fruta1 = frutas.at(-1);
+        document.getElementById("demonstração2").innerHTML = fruta1;
+    </script>
+</body>
+
+</html>
